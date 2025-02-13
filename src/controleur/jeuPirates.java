@@ -9,11 +9,14 @@ public class jeuPirates {
 		Pirate jack = new Pirate("Jack le Borgne");
         Pirate bill = new Pirate("Bill Jambe-de-Bois");
 
-        CartePopularite carte1 = new CartePopularite("Discours Inspirant", 1);
-        CartePopularite carte2 = new CartePopularite("Main de Fer", 2);
-
-        jack.jouerCarte(carte1);
-        bill.jouerCarte(carte2);
+        for (int i = 0; i < 4; i++) {
+            jack.ajouterCarte();
+            bill.ajouterCarte();
+        }
+        
+        jack.ajouterCarte();
+    
+        
 
         if (jack.aGagne()) {
             System.out.println(jack.getNom() + " est le nouveau capitaine !");
