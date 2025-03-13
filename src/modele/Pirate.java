@@ -4,6 +4,7 @@ import controleur.GestionCarte;
 public class Pirate {
 	
 	private String nom;
+	private Pirate adversaire;
 	private int pointVie = 5;
 	private int popularite;
 	private Carte [] main;
@@ -20,6 +21,10 @@ public class Pirate {
 	
 	public int getPopularite() {
 		return popularite;
+	}
+	
+	public void setAdversaire(Pirate adversaire) {
+		this.adversaire = adversaire;
 	}
 	
 	public void detaille() {
@@ -55,12 +60,17 @@ public class Pirate {
 		return null;
 	}
 	
+	public void reduireVie(int pointVie) {
+		pointVie -= cartePopul.getValeurVie();
+	}
+	
 	public void jouerCarte(String cartejouer) {
 		Carte carte = trouverCarte(cartejouer);
 		if(carte != null && carte instanceof CartePopularite) {
 			CartePopularite cartePopul = (CartePopularite) carte;
 		    popularite += cartePopul.getValeurPopularite();
-		    pointVie -= cartePopul.getValeurVie();
+		    adversaire.reduireVie(cartePopul.getValeurVie());
+		    
 			
 		System.out.println(nom + " joue une carte de popularite de valeur popularite " + cartePopul.getValeurPopularite() + " et de valeur vie : "+ cartePopul.getValeurVie());
 		retirerCarte(cartePopul);
