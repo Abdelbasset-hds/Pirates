@@ -7,13 +7,13 @@ public class Pirate {
     private int popularite;
     private Carte[] main;
     private int compteur = 0;
-    private Carte[] zonePopularite; // Nouveau : zone de popularité
-    private int compteurPopularite = 0; // Nouveau : compteur pour la zone de popularité
+    private Carte[] zonePopularite; // Nouveau : zone de popularitï¿½
+    private int compteurPopularite = 0; // Nouveau : compteur pour la zone de popularitï¿½
 
     public Pirate(String nom) {
         this.nom = nom;
         this.main = new Carte[5];
-        this.zonePopularite = new Carte[20]; // Taille maximale de la zone de popularité
+        this.zonePopularite = new Carte[20]; // Taille maximale de la zone de popularitï¿½
     }
 	
     public void ajouterCartePopularite(Carte carte) {
@@ -21,7 +21,7 @@ public class Pirate {
             zonePopularite[compteurPopularite] = carte;
             compteurPopularite++;
         } else {
-            System.out.println("La zone de popularité est pleine, impossible d'ajouter une nouvelle carte.");
+            System.out.println("La zone de popularite est pleine, impossible d'ajouter une nouvelle carte.");
         }
     }
 	
@@ -53,7 +53,7 @@ public class Pirate {
     }
 	
 	public Carte[] getMain() {
-	    Carte[] cartesActuelles = new Carte[compteur]; // Créer un tableau de la taille des cartes possédées
+	    Carte[] cartesActuelles = new Carte[compteur]; // Crï¿½er un tableau de la taille des cartes possï¿½dï¿½es
 	    for (int i = 0; i < compteur; i++) {
 	        cartesActuelles[i] = main[i]; // Copier uniquement les cartes valides
 	    }

@@ -7,11 +7,11 @@ public class AffichageConsole implements IAffichage {
 
     @Override
     public void afficherAccueil() {
-        System.out.println("----------- Bienvenue à  bord du légendaire navire pirate : LE SANGUINAIRE ! -------------");
+        System.out.println("----------- Bienvenue a bord du l'egendaire navire pirate : LE SANGUINAIRE ! -------------");
         System.out.println("Deux redoutables flibustiers, Jack le Borgne et Bill Jambe-de-Bois, s'affrontent...");
-        System.out.println("Ils convoitent tous deux le poste de capitaine, mais un seul pourra commander l'équipage !");
-        System.out.println("Les régles sont simples : Popularité ou Domination ? Qui saura convaincre l'équipage ?");
-        System.out.println("-------------- Préparez-vous pour une bataille sans merci ! --------------");
+        System.out.println("Ils convoitent tous deux le poste de capitaine, mais un seul pourra commander l'equipage !");
+        System.out.println("Les regles sont simples : Popularite ou Domination ? Qui saura convaincre l'equipage ?");
+        System.out.println("-------------- Preparez-vous pour une bataille sans merci ! --------------");
     }
 
 
@@ -25,27 +25,27 @@ public class AffichageConsole implements IAffichage {
 
     @Override
     public void afficherEtatJeu(String[] joueur1, String[] joueur2, String[][] zonePopularite1, String[][] zonePopularite2, String[] zoneAttaque) {
-        System.out.println("\n---------------- état actuel du duel ----------------------");
+        System.out.println("\n---------------- etat actuel du duel ----------------------");
         
         // Affichage des joueurs
-        System.out.println("Pirate " + joueur1[0] + "     | vie : " + joueur1[1] + " PV | a " + joueur1[2] + " Popularité");
-        System.out.println("Pirate " + joueur2[0] + "     | vie  " + joueur2[1] + " PV | a " + joueur2[2] + " Popularité");
+        System.out.println("Pirate " + joueur1[0] + "     | vie : " + joueur1[1] + " PV | a " + joueur1[2] + " Popularite");
+        System.out.println("Pirate " + joueur2[0] + "     | vie  " + joueur2[1] + " PV | a " + joueur2[2] + " Popularite");
         
         System.out.println("---------------------------------------- etat ----------------------------------------------- \n");
 
         // Affichage des zones de popularitÃ©
-        System.out.println("------------------ Zone de Popularité de " + joueur1[0] + " :----------------------------------");
+        System.out.println("------------------ Zone de Popularite de " + joueur1[0] + " :----------------------------------");
         afficherCartes(zonePopularite1);
         System.out.println("-----------------------------------------------------------------------------------------------");
-        System.out.println("----------­------- Zone de Popularité de " + joueur2[0] + " :----------------------------------");
+        System.out.println("------------------ Zone de Popularite de " + joueur2[0] + " :----------------------------------");
         afficherCartes(zonePopularite2);
         System.out.println("-----------------------------------------------------------------------------------------------" );
         // Affichage de la zone d'attaque
         System.out.println("------------------ Zone d'Attaque Actuelle :----------------------------------------------------");
         if (zoneAttaque != null && zoneAttaque.length > 0 && !zoneAttaque[0].equals("Aucune carte")) {
-            System.out.println("-" + zoneAttaque[0] + " : " + zoneAttaque[1] + " Degat : " + zoneAttaque[2] + ")");
+            System.out.println("-" + zoneAttaque[0] + " : " + zoneAttaque[1] + " Degat : " + zoneAttaque[2] );
         } else {
-            System.out.println("- Aucun coup n'est en préparation...");
+            System.out.println("- Aucun coup n'est en preparation...");
         }
 
         System.out.println("=================================================================================================\n");
@@ -70,10 +70,10 @@ public class AffichageConsole implements IAffichage {
 
     @Override
     public void afficherCartePiochee(String[] carte) {
-        System.out.println("---------------------- Une nouvelle carte a été piochée...------------------------------------");
+        System.out.println("---------------------- Une nouvelle carte a ete piochee...------------------------------------");
         System.out.println(carte[0] + " - " + carte[1]);
         System.out.println("-----------------------------------------------------------------------------------------------");
-        System.out.println("Une opportunité... ou un piége ? ¨");
+        System.out.println("Une opportunite... ou un piege ? ");
     }
 
 
@@ -109,9 +109,9 @@ public class AffichageConsole implements IAffichage {
 
     @Override
     public void afficherVainqueur(String nom) {
-        System.out.println(nom + " a conquis l'équipage et devient le nouveau CAPITAINE du Sanguinaire !");
-        System.out.println("Les tonneaux de rhum sâ€™ouvrent, l'é©quipage acclame son chef !");
-        System.out.println("Mais la mer est perfide... Cette victoire ne sera peut-étre pas éternelle !");
+        System.out.println(nom + " a conquis l'equipage et devient le nouveau CAPITAINE du Sanguinaire !");
+        System.out.println("Les tonneaux de rhum sâ€™ouvrent, l'equipage acclame son chef !");
+        System.out.println("Mais la mer est perfide... Cette victoire ne sera peut-etre pas eternelle !");
     }
 
 }

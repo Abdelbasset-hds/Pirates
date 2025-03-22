@@ -11,11 +11,11 @@ public class Regle {
         private Carte zoneAttaque;
 
         private static final Carte[] CARTES_DISPONIBLES = {
-            new CartePopularite("Discours Inspirant", "Boost de popularité", 1, 0),
+            new CartePopularite("Discours Inspirant", "Boost de popularite", 1, 0),
             new CartePopularite("Main de Fer", "Leadership imposant", 2, 1),
-            new CartePopularite("Révolte organisée", "Soutien du peuple", 1, 0),
-            new CartePopularite("Abordage Réussi", "Gain de respect", 2, 0),
-            new CarteAttaque("Coup de Canon", "Dégâts puissants", 3, 0),
+            new CartePopularite("Revolte organisee", "Soutien du peuple", 1, 0),
+            new CartePopularite("Abordage Reussi", "Gain de respect", 2, 0),
+            new CarteAttaque("Coup de Canon", "Degats puissants", 3, 0),
             new CarteAttaque("Sabre Tranchant", "Attaque rapide", 2, 0)
         };
 
@@ -23,7 +23,7 @@ public class Regle {
         private static Carte[] paquet = new Carte[CARTES_DISPONIBLES.length * COPIES_PAR_CARTE];
         private static int indexPioche = 0; 
 
-        // Remplissage et mélange du paquet au début du jeu
+        // Remplissage et mï¿½lange du paquet au dï¿½but du jeu
         static {
             initialiserPaquet();
             melangerPaquet();
@@ -49,7 +49,7 @@ public class Regle {
 
         public static Carte piocher() {
             if (indexPioche >= paquet.length) {
-                System.out.println("Toutes les cartes ont été piochées, on remélange !");
+                System.out.println("Toutes les cartes ont ete piochies, on remelange !");
                 melangerPaquet();
                 indexPioche = 0;
             }
@@ -137,11 +137,6 @@ public class Regle {
         Pirate temp = Actuel;
         Actuel = adversaire;
         adversaire = temp;
-
-        // Vider la zone d'attaque si le nouveau joueur actuel choisit une carte de popularitÃ©
-        if (zoneAttaque != null && Actuel.getMain()[0] instanceof CartePopularite) {
-            zoneAttaque = null;
-        }
     }
     
     /** VÃ©rifie si le jeu est terminÃ©. */

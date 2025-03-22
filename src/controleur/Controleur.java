@@ -79,14 +79,14 @@ public class Controleur {
         for (int i = 0; i < main.length; i++) {
             if (main[i] != null) {
                 String[] detailsCarte = new String[5];
-                detailsCarte[0] = (main[i] instanceof CartePopularite) ? "Carte de Popularit�" : "Carte d'Attaque"; // Type de carte
+                detailsCarte[0] = (main[i] instanceof CartePopularite) ? "Carte de Popularite" : "Carte d'Attaque"; // Type de carte
                 detailsCarte[1] = main[i].getNom(); // Nom de la carte
                 detailsCarte[2] = main[i].getDescription(); // Description de la carte
 
                 // Ajouter des détails spécifiques en fonction du type de carte
                 if (main[i] instanceof CartePopularite) {
                     CartePopularite cartePop = (CartePopularite) main[i];
-                    detailsCarte[3] = "Popularit� : +" + cartePop.getValeurPopularite(); // Valeur de popularité
+                    detailsCarte[3] = "Popularite : +" + cartePop.getValeurPopularite(); // Valeur de popularité
                     detailsCarte[4] = "Cost : " + cartePop.getCout(); // Coût de la carte
                 } else if (main[i] instanceof CarteAttaque) {
                     CarteAttaque carteAttaque = (CarteAttaque) main[i];
@@ -122,6 +122,7 @@ public class Controleur {
         return zoneDTO;
     }
     private String[] creerZoneAttaqueDTO() {
+    	
         if (modele.getZoneAttaque() != null) {
             Carte carte = modele.getZoneAttaque();
             return new String[]{carte.getNom(), carte.getDescription(), String.valueOf(((CarteAttaque) carte).getDegat())};
