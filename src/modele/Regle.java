@@ -137,6 +137,8 @@ public class Regle {
         Pirate temp = Actuel;
         Actuel = adversaire;
         adversaire = temp;
+
+      
     }
     
     /** Vérifie si le jeu est terminé. */
